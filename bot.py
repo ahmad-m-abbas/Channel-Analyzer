@@ -29,7 +29,8 @@ async def on_ready():
 
     i = 0
     async for message in channel.history(limit=None, after=after_date):
-        print(i)
+        if i % 100 == 0:
+            print(f"Processed First {i} Messages")
         i += 1
         try:
             reactions_data = [
